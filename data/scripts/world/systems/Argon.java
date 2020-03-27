@@ -221,7 +221,7 @@ public class Argon {
         argonPhi.setCustomDescriptionId("redlegion_argon_argonphi"); //reference descriptions.csv
         PlanetConditionGenerator.generateConditionsForPlanet(argonPhi, StarAge.AVERAGE);
 
-        //asteroid ring
+        //asteroid belt1 ring
         system.addAsteroidBelt(argonStar, 1000, asteroidBelt1Dist, 800, 250, 400, Terrain.ASTEROID_BELT, "Inner Band");
         system.addRingBand(argonStar, "misc", "rings_asteroids0", 256f, 3, Color.gray, 256f, asteroidBelt1Dist-200, 250f);
         system.addRingBand(argonStar, "misc", "rings_asteroids0", 256f, 0, Color.gray, 256f, asteroidBelt1Dist, 350f);
@@ -439,8 +439,6 @@ public class Argon {
         stableLoc3.setCircularOrbit(argonStar, MathUtils.getRandomNumberInRange(0f,360f),stable3Dist, 1720);
 
 		// Blood Keep - the Blood Knight Citadel: Far orbital near the fringe point for garrison, place where strike forces report back and regroup
-		// pure military, huge patrols
-
         SectorEntityToken bloodKeep = system.addCustomEntity("argon_blood_keep", "Blood Keep", "station_hightech2", "redlegion");
         bloodKeep.setCircularOrbitPointingDown(argonStar,0,bloodDist,4000f);
         bloodKeep.setCustomDescriptionId("redlegion_argon_bloodkeep");
@@ -501,8 +499,6 @@ public class Argon {
                 3421f);
 
         hye_steel.setCustomDescriptionId("redlegion_argon_hye_steel"); //reference descriptions.csv
-        //PlanetConditionGenerator.generateConditionsForPlanet(hye_steel, StarAge.AVERAGE);
-        //PlanetConditionGenerator.generateConditionsForPlanet();
         hye_steel.getMarket().addCondition(Conditions.RUINS_WIDESPREAD);
         hye_steel.getMarket().addCondition(Conditions.VERY_COLD);
         hye_steel.getMarket().addCondition(Conditions.DECIVILIZED);
@@ -530,7 +526,7 @@ public class Argon {
                                            boolean isFreePort, boolean floatyJunk) {
         EconomyAPI globalEconomy = Global.getSector().getEconomy();
         String planetID = primaryEntity.getId();
-        String marketID = planetID + "_market"; //IMPORTANT this is a naming convention because of this
+        String marketID = planetID + "_market"; //IMPORTANT this is a naming convention for markets. didn't want to have to pass in another variable :D
 
         MarketAPI newMarket = Global.getFactory().createMarket(marketID, name, popSize);
         newMarket.setFactionId(factionID);

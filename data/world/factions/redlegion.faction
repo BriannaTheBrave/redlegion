@@ -2,26 +2,28 @@
   "id": "redlegion",
   "color": [
     255,
-    100,
-    100,
+    40,
+    350,
     255
   ],
+  "secondaryUIColor":[225,225,225,255],
+  "secondarySegments":3,
   "baseUIColor": [
     255,
-    170,
-    160,
+    220,
+    220,
     255
   ],
   "darkUIColor": [
-    195,
-    70,
-    50,
+    155,
+    100,
+    100,
     175
   ],
   "gridUIColor": [
     200,
-    50,
-    50,
+    150,
+    150,
     75
   ],
   "brightUIColor": [
