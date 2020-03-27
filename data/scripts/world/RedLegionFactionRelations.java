@@ -31,12 +31,13 @@ public class RedLegionFactionRelations implements SectorGeneratorPlugin {
         player.setRelationship(rel.getId(), RepLevel.NEUTRAL);
 
         //but not pirates and dabble
-        rel.setRelationship("pirates",0.30f);
-        rel.setRelationship("diableavionics", 0.10f);
+        rel.setRelationship("pirates",-0.60f);
+        rel.setRelationship("diableavionics", 0.0f);
+        rel.setRelationship("HMI", 0.25f);
         rel.setRelationship("hegemony", -1f);
-        rel.setRelationship("persean_league", 0.3f);
+        rel.setRelationship("persean_league", 0.25f);
         rel.setRelationship("luddic_path", -1f);
-        rel.setRelationship("luddic_church", -1f);
+        rel.setRelationship("luddic_church", -0.85f);
         rel.setRelationship("tritachyon", 0.4f);
         //todo other mod factions!
     }
