@@ -29,6 +29,7 @@ public class RedLegionFactionRelations implements SectorGeneratorPlugin {
 
         //Sets player relations
         player.setRelationship(rel.getId(), RepLevel.NEUTRAL);
+        //player.setRelationship(rel.getId(), RepLevel.COOPERATIVE); //testing only
 
         //but not pirates and dabble
         rel.setRelationship("pirates",-0.60f);
