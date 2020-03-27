@@ -2,7 +2,7 @@ id,trigger,conditions,script,text,options,notes
 # Market descriptions,,,,,,
 flavorTextMarketArgonPrime,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == redlegion
-$market.id == argon_prime_market","AddText ""The marketplace is a huge, multistory hub of commerce. High tech displays show ad-holos and brilliant lights cast the building with garish light. People from much of the sector can be seen haggling and browsing wears. A number of small high-tech space ships land in the middle of the hub set to blaring music and fanfare! Ad-holos spring up all around the dazzling personal vehicles."" marketFlavorTextColor
+$market.id == argon_prime_market","AddText ""The marketplace is a vast multi-story hub of commerce. High tech displays show ad-holos and brilliant lights cast the building with garish colors. People from much of the sector can be seen haggling and browsing wears. A number of small high-tech space ships land in the middle of the hub set to blaring music and fanfare! Ad-holos spring up all around the dazzling personal vehicles."" marketFlavorTextColor
 AddText ""There are Red Legion guards patrolling the area, remarkable in their stark white with blood-red trimmed uniforms. You can buy nearly anything here, it is just a matter of finding it."" marketFlavorTextColor",,,
 
 flavorTextMarketArgonWhiteCitadel,TradePanelFlavorText,"$global.tradePanelMode == MARKET
@@ -13,11 +13,11 @@ AddText ""The interior is seamless and clean, yet you suspect the numerous alcov
 flavorTextMarketArgonStrolluck,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == redlegion
 $market.id == argon_strolluck_market","AddText ""Merchants go about their business in the busy concourse. A constant din of voices and the distant thunder of heavy machinery remind you this is a mining colony first and foremost. Despite this, attention has been given to the concourse, with a neat and tidy layout making efficient use of space."" marketFlavorTextColor
-AddText ""Guards in uniforms of stark white with blood-red trim mark restricted areas and patrol about with friendly waves and heavy pulse-rifles strapped to their backs."" marketFlavorTextColor",,,
+AddText ""Guards in uniforms of stark white with blood-red trim are on patrol. Some stand in red-painted zones, marking restricted areas. One gives you a friendly wave, heavy pulse-rifle strapped to their back."" marketFlavorTextColor",,,
 
 flavorTextMarketArgonBeta,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == redlegion
-$market.id == argon_beta_market","AddText ""Stepping out of the space port you are beset by a gorgeous valley of lush greenery. Flowers and trees have been cultivated into a lush garden for a grand and natural concourse filled with merchants neatly spaced out. The planet supposedly gets almost five hundred days of sunshine, with great works of irrigation keeping the plants fed. Today is a particularly warm and lovely day, with merchants haggling and children playing in the decorative fountain."" marketFlavorTextColor
+$market.id == argon_beta_market","AddText ""Stepping out of the space port you are beset by a gorgeous valley of lush greenery. Flowers and trees have been cultivated into a lush garden for a grand and natural concourse filled with merchants neatly spaced out. The planet supposedly gets almost five hundred days of sunshine. The nearby irrigation system is tremendous and hums along rhythmically to birdsong. Today is a particularly warm and lovely day, with merchants haggling and children playing in the decorative fountain."" marketFlavorTextColor
 AddText ""Only the glimpse of stark white uniforms with blood-red trim reminds you of the heavy military presence neatly tucked away, just within view and ready to respond. One gives you a friendly wave, pulse-rifle strapped to his back."" marketFlavorTextColor",,,
 
 flavorTextMarketArgonBloodKeep,TradePanelFlavorText,"$global.tradePanelMode == MARKET
