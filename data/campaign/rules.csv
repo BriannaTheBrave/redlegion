@@ -1,0 +1,26 @@
+id,trigger,conditions,script,text,options,notes
+# Market descriptions,,,,,,
+flavorTextMarketArgonPrime,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == redlegion
+$market.id == argon_prime_market","AddText ""The marketplace is a huge, multistory hub of commerce. High tech displays show ad-holos and brilliant lights cast the building with garish light. People from much of the sector can be seen haggling and browsing wears. A number of small high-tech space ships land in the middle of the hub set to blaring music and fanfare! Ad-holos spring up all around the dazzling personal vehicles."" marketFlavorTextColor
+AddText ""There are Red Legion guards patrolling the area, remarkable in their stark white with blood-red trimmed uniforms. You can buy nearly anything here, it is just a matter of finding it."" marketFlavorTextColor",,,
+
+flavorTextMarketArgonWhiteCitadel,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == redlegion
+$market.id == argon_white_citadel_market","AddText ""First you must pass by heavy security checkpoints with weapons fortifications and huge batteries before being allowed inside. The neat interior past the docks is stark yet efficiently used. There are military wears available if you have the connections to be allowed to browse them - after all, only a friend of the Red Legion could buy this advanced tech or tap into the surplus stockpiles. You get the distinct feeling you are being followed - obviously they want to keep an eye on you in their fortification, but you cannot shake the feeling there is someone here you cannot see."" marketFlavorTextColor
+AddText ""The interior is seamless and clean, yet you suspect the numerous alcoves and small indentations hide the heavy defenses that make this such a formidable mix of low and high tech - turrets hang from the ceiling suspended by unseen forces, yet guards with heavy ammunition dependant weapons stand by the doors."" marketFlavorTextColor",,,
+
+flavorTextMarketArgonStrolluck,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == redlegion
+$market.id == argon_strolluck_market","AddText ""Merchants go about their business in the busy concourse. A constant din of voices and the distant thunder of heavy machinery remind you this is a mining colony first and foremost. Despite this, attention has been given to the concourse, with a neat and tidy layout making efficient use of space."" marketFlavorTextColor
+AddText ""Guards in uniforms of stark white with blood-red trim mark restricted areas and patrol about with friendly waves and heavy pulse-rifles strapped to their backs."" marketFlavorTextColor",,,
+
+flavorTextMarketArgonBeta,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == redlegion
+$market.id == argon_beta_market","AddText ""Stepping out of the space port you are beset by a gorgeous valley of lush greenery. Flowers and trees have been cultivated into a lush garden for a grand and natural concourse filled with merchants neatly spaced out. The planet supposedly gets almost five hundred days of sunshine, with great works of irrigation keeping the plants fed. Today is a particularly warm and lovely day, with merchants haggling and children playing in the decorative fountain."" marketFlavorTextColor
+AddText ""Only the glimpse of stark white uniforms with blood-red trim reminds you of the heavy military presence neatly tucked away, just within view and ready to respond. One gives you a friendly wave, pulse-rifle strapped to his back."" marketFlavorTextColor",,,
+
+flavorTextMarketArgonBeta,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == redlegion
+$market.id == argon_beta_market","AddText ""A flexible umbilical automatically connects to your ship as you dock, allowing for an easy if slightly cramped walk into the interior. Passing through a heavy, semi-transparent material force-field, you step out into the customs area. The station interior is just as stark white as the crisp military uniforms of the guards and customs agents who process you in. The blood-red accents reflect off the lights and cast a slight haze of red about the room as you are allowed further in to the market area."" marketFlavorTextColor
+AddText ""Every bit the military surplus super-store you've ever seen - there are stacks and heaped piles of materials. A quarter master moves about with a team of heavy guards, organizing and presenting weaponry to customers. Standing off to the side is a thin man in uniform with a small shuttle who can show you the surplus military ships available to those who have made in-roads with the Red Legion. The whole area is monitored by cameras, turrets, a few hovering drones who move about with a dull hum. A large military assault robot thrums with energy over near the loading zone. Best go about your business."" marketFlavorTextColor",,,
