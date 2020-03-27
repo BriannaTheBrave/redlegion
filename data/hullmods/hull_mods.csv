@@ -1,0 +1,2 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+Red Legion Grit,redlegion_crewmod,,,Red Legion,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.redlegion_crewmod,"The Red Legion is a mix of veteran pirates and mercenaries. While an odd bunch, they have more grit than other crews and know how to hold a ship together, increasing hull durability by 10%.",Boosts Hull Durability,graphics/redlegion/hullmods/redlegion_crewmod.png
