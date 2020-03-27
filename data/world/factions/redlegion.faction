@@ -2,32 +2,32 @@
   "id": "redlegion",
   "color": [
     255,
-    70,
-    60,
+    100,
+    100,
     255
   ],
   "baseUIColor": [
     255,
-    70,
-    60,
+    170,
+    160,
     255
   ],
   "darkUIColor": [
-    155,
-    30,
-    25,
+    195,
+    70,
+    50,
     175
   ],
   "gridUIColor": [
-    255,
+    200,
     50,
     50,
     75
   ],
   "brightUIColor": [
     255,
-    185,
-    165,
+    225,
+    205,
     255
   ],
   "personNamePrefix": "Legionnaire",

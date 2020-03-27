@@ -388,7 +388,7 @@ public class Argon {
                 "desert1",
                 360f*(float)Math.random(),
                 65f,
-                majorisRad+350,
+                majorisRad+550,
                 315);
 
         yawsplu.setCustomDescriptionId("redlegion_argon_yawsplu"); //reference descriptions.csv
@@ -400,7 +400,7 @@ public class Argon {
                 "barren-desert",
                 360f*(float)Math.random(),
                 110f,
-                majorisRad+500,
+                majorisRad+750,
                 615);
 
         douven.setCustomDescriptionId("redlegion_argon_douven"); //reference descriptions.csv
@@ -442,7 +442,7 @@ public class Argon {
 		// pure military, huge patrols
 
         SectorEntityToken bloodKeep = system.addCustomEntity("argon_blood_keep", "Blood Keep", "station_hightech2", "redlegion");
-        bloodKeep.setCircularOrbitPointingDown(argonStar,360*(float)Math.random(),bloodDist,4000f);
+        bloodKeep.setCircularOrbitPointingDown(argonStar,0,bloodDist,4000f);
         bloodKeep.setCustomDescriptionId("redlegion_argon_bloodkeep");
         MarketAPI bloodKeep_market = addMarketplace("redlegion", bloodKeep, null,
                 "Blood Keep",
@@ -485,7 +485,7 @@ public class Argon {
         JumpPointAPI jumpPoint3 = Global.getFactory().createJumpPoint(
                 "fringe_jump",
                 "Fringe System Jump");
-        jumpPoint3.setCircularOrbit(system.getEntityById("Argon"), 2, jumpFringeDist, 3421f);
+        jumpPoint3.setCircularOrbit(system.getEntityById("Argon"), 2, jumpFringeDist, 4000f);
 
         jumpPoint3.setStandardWormholeToHyperspaceVisual();
         system.addEntity(jumpPoint3);
@@ -495,7 +495,7 @@ public class Argon {
                 argonStar,
                 "Hye-Steel",
                 "frozen",
-                0,
+                360*(float)Math.random(),
                 190f,
                 hye_steelDist,
                 3421f);
