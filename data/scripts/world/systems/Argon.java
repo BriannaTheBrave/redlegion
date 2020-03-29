@@ -16,6 +16,7 @@ import com.fs.starfarer.api.impl.campaign.procgen.PlanetConditionGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.StarAge;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.terrain.AsteroidFieldTerrainPlugin.AsteroidFieldParams;
+import com.fs.starfarer.api.impl.campaign.terrain.BaseRingTerrain;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin.MagneticFieldParams;
@@ -47,6 +48,7 @@ public class Argon {
         final float stable2Dist = 7100f;
         final float strolluckDist = 8450f;
         final float asteroids2Dist = 8900f;
+        final float argonGateDist = 9500f;
         final float argonMajorisDist = 11400f;
         final float argonGammaDist = 14100f;
         final float stable3Dist = 15200f;
@@ -355,7 +357,14 @@ public class Argon {
                         "Asteroid Field")); // null for default name
         argonAF2.setCircularOrbit(argonStar, 130, asteroids2Dist, 940);
 
-        // put a ring here! todo
+        // inactive ring
+        SectorEntityToken gate = system.addCustomEntity("argon_gate", // unique id
+                "Argon Gate", // name - if null, defaultName from custom_entities.json will be used
+                "inactive_gate", // type of object, defined in custom_entities.json
+                null); // faction
+        gate.setCircularOrbit(system.getEntityById("Argon"), 0, argonGateDist, 850);
+
+
 
 		// Argon Majoris: Gas Giant with 3 moons, Argon Minoris I, II, III
         PlanetAPI argonMajoris = system.addPlanet("argon_majoris",
