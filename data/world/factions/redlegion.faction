@@ -1,37 +1,12 @@
 {
   "id": "redlegion",
-  "color": [
-    255,
-    40,
-    30,
-    255
-  ],
+  "color": [255,40,30,255],
   "secondaryUIColor":[255,255,255,255],
   "secondarySegments":4,
-  "baseUIColor": [
-    255,
-    220,
-    220,
-    255
-  ],
-  "darkUIColor": [
-    155,
-    100,
-    100,
-    175
-  ],
-  "gridUIColor": [
-    200,
-    150,
-    150,
-    75
-  ],
-  "brightUIColor": [
-    255,
-    225,
-    205,
-    255
-  ],
+  "baseUIColor": [255,0,0,255],
+  "darkUIColor": [155,50,50,175],
+  "gridUIColor": [200,150,150,75],
+  "brightUIColor": [255,205,185,255],
   "personNamePrefix": "Legionnaire",
   "entityNamePrefix": "Legionnaire",
   "displayName": "Red Legion",
