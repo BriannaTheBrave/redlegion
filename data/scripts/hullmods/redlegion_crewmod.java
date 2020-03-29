@@ -22,4 +22,9 @@ public class redlegion_crewmod extends BaseHullMod {
         }
         // This is to remove the unnecessary dummy hull mod. Unless the player want it... but nah!
     }
+
+    @Override
+    public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
+        return Math.round((GRIT_HULL_BOOST-1)*100)+"%";
+    }
 }
