@@ -6,7 +6,7 @@
   "crewExpereinceLevelIncreaseChance":0.0,
   "baseFleetCostMultiplier":1.0,
   "marketSpawnWeight":0.75, #we are not big yet,
-  "ngcTooltip":"Lady Crimson brought advanced technology, hyper-advanced warships, and lost miracle devices back from the rim. She founded the Red Legion, and shares her tech-edge with her trusted allies in a bid to bring freedom and profit to bear against old powers. Can you help the Red Legion topple the status-quo and replace the powers that be?",
+  "ngcTooltip":"Lady Crimson brought advanced technology, powerful warships, and lost miracle devices back from the rim. She founded the Red Legion, and shares her tech-edge with her trusted allies in a bid to bring freedom and profit to bear against old powers. As a newly commissioned officer, can you help the Red Legion topple the status-quo and replace the powers that be?",
 
   "customRebelFaction":"",
   "customRebelFleetId":"",
@@ -30,15 +30,6 @@
     "hegemony",
     "luddic_church",
     "ora"],
-  rel.setRelationship("pirates",-0.60f);
-  rel.setRelationship("diableavionics", 0.0f);
-  rel.setRelationship("HMI", 0.25f);
-  rel.setRelationship("hegemony", -1f);
-  rel.setRelationship("persean_league", 0.25f);
-  rel.setRelationship("luddic_path", -1f);
-  rel.setRelationship("luddic_church", -0.85f);
-  rel.setRelationship("tritachyon", 0.4f);
-
   "startRelationships":{
     "pirates": -0.6, #just because you're a pirate doesn't mean you can have this,
     "diableavionics": 0, #we could be friends
@@ -53,13 +44,13 @@
   "maxRelationships":{
     "luddic_path": -0.6, #You and I dont see eye to eye
     "luddic_church": -0.4, #You and I see less eye to eye
-    "hegemony": -0.5,} #Your job is supremacy - mine too
+    "hegemony": -0.5}, #Your job is supremacy - mine too
   "diplomacyPositiveChance":{
     "luddic_path": 0.1, #Not likely to get along
     "luddic_church": 0.2, #yeah not likely
     "tritachyon": 0.6, #Tech and money makes friends,
     "hegemony": 0.2, #not likely to be friends,
-    "persean_league": 0.65,} #we are trying to stand up to your enemies, a little kindness
+    "persean_league": 0.65}, #we are trying to stand up to your enemies, a little kindness
   "diplomacyNegativeChance":{
     "luddic_path": 0.8, #luddites
     "luddic_church": 0.6, #more luddites
@@ -78,7 +69,7 @@
 
   "diplomacyTraits":["envious", "stalwart", "helps_allies", "irredentist"], #I envy power, am stalwart in the face of long wars, remember my friends, and always get revenge
   "freeMarket":true,
-  #"specialForcesNamerClass":"exerelin.campaign.intel.specialforces.namer.TriTachyonNamer",
+  "specialForcesNamerClass":"exerelin.campaign.intel.specialforces.namer.CommanderNamer",
 
   #"miningVariantsOrWings":[],
 
@@ -159,6 +150,6 @@
   ],
 
   "startSpecialItems":[
-    [["pirate_package", ""], ["midline_package", ""], ["high_tech_package", ""]]
+    [["pirate_package", ""]], [["midline_package", ""]], [["high_tech_package", ""]],
   ]
 }
