@@ -1,0 +1,13 @@
+{
+  "starts":[
+    {
+      "id":"crimsonGuardStart",
+      "name":"Crimson Guard",
+      "difficulty":"Normal",
+      "desc":"You have served Lady and Lord Crimson since they were just Mercs (or Pirates, depending on who you asked). You've seen it all together, and now you finally get to reap the rewards. Super-advanced ships and weapons, AI systems to improve accuracy, and a war-chest for the upcoming conquests. You're one of the lucky ones - a pirate who made it to the top and who now gets to play a whole new game...",
+      "className":"data.scripts.campaign.customstart.CrimsonGuardStart",
+      "factionId":"redlegion",
+      "requiredModId":"RedLegion"
+    }
+  ]
+}

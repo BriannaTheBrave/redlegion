@@ -1,37 +1,12 @@
 {
   "id": "redlegion",
-  "color": [
-    255,
-    40,
-    30,
-    255
-  ],
+  "color": [255,40,30,255],
   "secondaryUIColor":[255,255,255,255],
   "secondarySegments":4,
-  "baseUIColor": [
-    255,
-    220,
-    220,
-    255
-  ],
-  "darkUIColor": [
-    155,
-    100,
-    100,
-    175
-  ],
-  "gridUIColor": [
-    200,
-    150,
-    150,
-    75
-  ],
-  "brightUIColor": [
-    255,
-    225,
-    205,
-    255
-  ],
+  "baseUIColor": [255,0,0,255],
+  "darkUIColor": [155,50,50,175],
+  "gridUIColor": [200,150,150,75],
+  "brightUIColor": [255,205,185,255],
   "personNamePrefix": "Legionnaire",
   "entityNamePrefix": "Legionnaire",
   "displayName": "Red Legion",
@@ -43,15 +18,15 @@
   "showInIntelTab": true,
   # "description":"The Red Legion Description - TODO", # this is handled inside of descriptions.csv by magicly linking with the id of the faction
   "factionDoctrine":{
-    "warships":4,
-    "carriers":1,
+    "warships":3,
+    "carriers": 2,
     "phaseShips":2,
 
     "officerQuality":2,
     "shipQuality":3,
     "numShips":2,
 
-    "shipSize":3,
+    "shipSize":4,
 
     "aggression":4,
 
@@ -62,6 +37,7 @@
 
     "commanderSkillsShuffleProbability":0.5,
     "commanderSkills":[
+      "ship_design",
       "officer_management",
       "coordinated_maneuvers",
       "fighter_doctrine",
@@ -90,10 +66,11 @@
   },
   # so these are ships the faction gets access to when importing from outside their faction
   "shipsWhenImporting":{
-    "tags":["base_bp", "pirate_bp", "pirates"],
+    "tags":["base_bp", "pirate_bp", "pirates", "midline_bp", "hightech_bp"],
     "hulls":[
       "falcon_p",
       "atlas2",
+      "eagle"
     ],
   },
   "knownWeapons":{
@@ -105,10 +82,14 @@
     ],
   },
   "knownShips":{
-    "tags":["base_bp", "pirate_bp", "pirates", "lowtech_bp"],
+    "tags":["base_bp", "pirate_bp", "pirates", "midline_bp", "hightech_bp"],
     "hulls":[
       "falcon_p",
-      "atlas2"
+      "atlas2",
+      "eagle",
+      "brawler_tritachyon",
+      "buffalo_tritachyon",
+      "kite_original"
     ],
   },
   # listing ships here will make the faction mostly use them even if other hulls become available
@@ -120,11 +101,17 @@
   "variantOverrides":{
   },
   "knownFighters":{
-    "tags":["pirates"],
+    "tags":["pirates", "base_bp", "lowtech_bp", "midline_bp", "hightech_bp"],
     "fighters":[
       "broadsword_wing",
       "talon_wing",
-      "piranha_wing"
+      "piranha_wing",
+      "xyphos_wing",
+      "thunder_wing",
+      "claw_wing",
+      "trident_wing",
+      "cobra_wing",
+      "longbow_wing"
     ],
   },
   "priorityFighters":{
@@ -168,8 +155,10 @@
   "ranks":{
     "ranks":{
       "spaceCommander":{"name":"Crimson Guard"},
+      "factionLeader":{"name":"Lady"}
     },
     "posts":{
+      "factionLeader":{"name":"Lady"},
       "patrolCommander":{"name":"Centurion"},
       "fleetCommander":{"name":"Consular"},
       "baseCommander":{"name":"Praetorian"},
@@ -181,9 +170,9 @@
     "tradeLiner":"Liner Convoy",
     "tradeSmuggler":"Trade Convoy",
 
-    "patrolSmall":"Auxilliary Patrol",
+    "patrolSmall":"Auxiliary Patrol",
     "patrolMedium":"Patrol",
-    "patrolLarge":"Crimson Patrol",
+    "patrolLarge":"Crimson Fleet",
 
     "inspectionFleet":"Inspection Fleet",
     "taskForce":"Task Force",

@@ -1,0 +1,155 @@
+{
+  "uniqueModClassName":"data.scripts.world.RedLegionGen",
+  "playableFaction":true,
+  "corvusCompatible":true,
+
+  "crewExpereinceLevelIncreaseChance":0.0,
+  "baseFleetCostMultiplier":1.0,
+  "marketSpawnWeight":0.75, #we are not big yet,
+  "ngcTooltip":"Lady Crimson brought advanced technology, powerful warships, and lost miracle devices back from the rim. She founded the Red Legion, and shares her tech-edge with her trusted allies in a bid to bring freedom and profit to bear against old powers. As a newly commissioned officer, can you help the Red Legion topple the status-quo and replace the powers that be?",
+
+  "customRebelFaction":"",
+  "customRebelFleetId":"",
+  "rebelFleetSuffix":"Rebel",
+
+  "invasionSupportFleetName":"Crimson Assault Group",
+  "responseFleetName":"Crimson Guard Fleet",
+  "defenceFleetName":"Hellguard Defense Force",
+
+  "vengeanceLevelNames":["War", "Annihilation"],
+  "vengeanceFleetNames":["Crimson Executors", "Annihilation Fleet"],
+  "vengeanceFleetNamesSingle":["a War Fleet", "an Annihilation Fleet"],
+
+  "positiveDiplomacyExtra":0,
+  "negativeDiplomacyExtra":0,
+  "factionsLiked":[
+    "tritachyon",
+    "HMI",
+    "persean"],
+  "factionsDisliked":[
+    "hegemony",
+    "luddic_church",
+    "ora"],
+  "startRelationships":{
+    "pirates": -0.6, #just because you're a pirate doesn't mean you can have this,
+    "diableavionics": 0, #we could be friends
+    "HMI": 0.25, #we like a lot of the same things, both legit
+    "hegemony": -1, #you have come for our stuff and you cannot have it,
+    "persean_league": 0.25, #friends against hegemony plz
+    "luddic_path": -1, #The Path hates RL use of hightech
+    "luddic_church": -0.85, #Quit whining and start digging.
+    "shadow_industry": -0.2, #lemme alone
+    "tritachyon": 0.4, #They pay cash for big tech
+    "ORA": -0.1}, #Not on the same page here
+  "maxRelationships":{
+    "luddic_path": -0.6, #You and I dont see eye to eye
+    "luddic_church": -0.4, #You and I see less eye to eye
+    "hegemony": -0.5}, #Your job is supremacy - mine too
+  "diplomacyPositiveChance":{
+    "luddic_path": 0.1, #Not likely to get along
+    "luddic_church": 0.2, #yeah not likely
+    "tritachyon": 0.6, #Tech and money makes friends,
+    "hegemony": 0.2, #not likely to be friends,
+    "persean_league": 0.65}, #we are trying to stand up to your enemies, a little kindness
+  "diplomacyNegativeChance":{
+    "luddic_path": 0.8, #luddites
+    "luddic_church": 0.6, #more luddites
+    "tritachyon": 0.1, #a solution is forethcoming
+    "hegemony": 0.6}, #you're doing that on purpose, aren't you
+
+  "morality":"amoral", #survival and strength have no basis in morality
+
+  "alignments":{
+    "corporate":0.5,
+    "technocratic":1,
+    "militarist":1,
+    "diplomatic":0.5,
+    "ideological":-0.5,
+  },
+
+  "diplomacyTraits":["envious", "stalwart", "helps_allies", "irredentist"], #I envy power, am stalwart in the face of long wars, remember my friends, and always get revenge
+  "freeMarket":true,
+  "specialForcesNamerClass":"exerelin.campaign.intel.specialforces.namer.CommanderNamer",
+
+  #"miningVariantsOrWings":[],
+
+  "colonyExpeditionChance":1.75,	# Must grow to survive
+  "colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",
+
+  "defenceStations":[
+    {"ids":["orbitalstation_high", "battlestation_high", "starfortress_high"]},
+    {"ids":["orbitalstation_mid", "battlestation_mid", "starfortress_mid"], "weight":0.2},
+  ],
+
+  "industrySeeds":[
+    {"id":"heavyindustry", "mult":0.1},
+    {"id":"fuelprod", "mult":0.1},
+    {"id":"lightindustry", "mult":0.1},
+    {"id":"orbitalworks", "mult":0.1},
+  ],
+
+  "bonusSeeds":[
+    {"id":"population_upsize", "count":1},
+    {"id":"nanoforge_corrupted", "count":1},
+    {"id":"aiCore_station", "count":3, "mult":0.5},
+    {"id":"aiCore_military", "mult":0.4},
+    {"id":"aiCore_heavyindustry", "count":1},
+    {"id":"aiCore_any", "mult":1.5},
+  ],
+
+  "startShipsSolo":[
+    ["centurion_Starting"],
+    ["wolf_Starting"],
+    ["brawler_Elite"],
+    ["cerberus_d_pirates_Shielded"],
+    ["kite_Starting"]
+  ],
+  "startShipsCombatSmall":[
+    ["hammerhead_Balanced", "wolf_Starting", "centurion_Starting"],
+    ["swp_sunder_u_sta", "wolf_CS", "brawler_tritachyon_Standard"],
+    ["hammerhead_Balanced", "lasher_CS", "centurion_Starting"],
+  ],
+  "startShipsTradeSmall":[
+    ["mule_Starting", "wolf_CS", "mercury_Standard"],
+    ["tarsus_Standard", "vigilance_Starting", "mercury_PD"],
+    ["hound_d_pirates_Standard", "shepherd_Frontier", "kite_hegemony_Interceptor"],
+  ],
+  "startShipsCombatLarge":[
+    ["eagle_Balanced", "hammerhead_Elite", "vigilance_FS"],
+    ["swp_eagle_black_eli", "swp_archer_cs", "swp_alastor_sta"],
+    ["falcon_p_Strike", "enforcer_d_pirates_Strike", "lasher_Standard"],
+    ["aurora_Assault_Support", "tempest_Attack"],
+  ],
+  "startShipsExplorerLarge":[
+    ["apogee_Balanced", "swp_beholder_cs", "afflictor_Strike"],
+    ["apogee_Balanced", "medusa_Attack", "omen_PD"],
+    ["venture_Balanced", "gemini_Standard", "wayfarer_Standard"],
+    ["venture_Balanced", "buffalo_pirates_Standard", "shepherd_Frontier"],
+  ],
+  "startShipsTradeLarge":[
+    ["colossus_Standard", "mule_Standard", "shepherd_Frontier"],
+    ["swp_circe_sta", "buffalo_tritachyon_Standard", "swp_nautilus_att"],
+    ["starliner_Standard", "buffalo_tritachyon_Standard", "mercury_Standard"],
+    ["colossus_Standard", "wayfarer_Standard", "wayfarer_Standard", "kite_Starting"],
+  ],
+  "startShipsCarrierSmall":[
+    ["swp_vortex_sta", "tempest_Attack", "swp_hecate_cs"],
+    ["drover_Strike", "vigilance_Standard", "brawler_Elite"],
+    ["drover_Strike", "monitor_Escort", "vigilance_AP"],
+    ["condor_Attack", "buffalo2_FS", "lasher_Standard"],
+  ],
+  "startShipsCarrierLarge":[
+    ["heron_Strike", "hammerhead_Balanced", "centurion_Starting"],
+    ["swp_eos_sta", "swp_arachne_sta", "brawler_tritachyon_Standard"],
+    ["colossus3_Pirate", "enforcer_d_pirates_Strike", "hound_d_pirates_Standard"],
+    ["colossus3_Pirate", "condor_Attack", "hammerhead_Balanced"],
+  ],
+  "startShipsSuper":[
+    ["hyperion_Attack"],
+    ["uw_venomx_eli"]
+  ],
+
+  "startSpecialItems":[
+    [["pirate_package", ""]], [["midline_package", ""]], [["high_tech_package", ""]],
+  ]
+}
