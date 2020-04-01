@@ -141,7 +141,7 @@ public class Tradewind {
                 vlastaDist,
                 421f);
 
-        tradewindStar.setCustomDescriptionId("redlegion_tradewind_vlasta"); //reference descriptions.csv
+        vlasta.setCustomDescriptionId("redlegion_tradewind_vlasta"); //reference descriptions.csv
         vlasta.getMarket().addCondition(Conditions.NO_ATMOSPHERE);
         vlasta.getMarket().addCondition(Conditions.RUINS_WIDESPREAD);
         vlasta.getMarket().addCondition(Conditions.IRRADIATED);
