@@ -39,20 +39,20 @@ public class Tradewind {
 
         //setup all distances here
         final float redmondDist = 1270f;
-        final float jabezDist = 1650f;
-        final float stable1Dist = 1785f;
-        final float asteroidBelt1Dist = 2140f;
-        final float jumpInnerDist = 2155f;
+        final float jabezDist = 2250f;
+        final float stable1Dist = 2385f;
+        final float asteroidBelt1Dist = 2540f;
+        final float jumpInnerDist = 2755f;
         final float vlastaDist = 2760f;
-        final float tandaDist = 2900f;
-        final float stable2Dist = 3200f;
-        final float stable3Dist = 3200f;
-        final float ervarDist = 3650f;
-        final float jumpOuterDist = 4355f;
-        final float koenDist = 4650f;
+        final float tandaDist = 4000f;
+        final float stable2Dist = 4400f;
+        final float stable3Dist = 4400f;
+        final float ervarDist = 5050f;
+        final float jumpOuterDist = 5355f;
+        final float koenDist = 6650f;
 
         final float redTariff = .28f;
-        final float otherTariff = .30f;
+        final float otherTariff = .30f; //todo move to static class full of these
 
         //Irradiated world              Redmond
         PlanetAPI redmond = system.addPlanet("tradewind_redmond",

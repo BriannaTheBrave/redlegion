@@ -94,7 +94,7 @@ public class Argon {
                 argonStar,
                 "Argon Prime",
                 "terran",
-                360f*(float)Math.random(),
+                30,
                 220f,
                 argonPrimeDist,
                 320f);
