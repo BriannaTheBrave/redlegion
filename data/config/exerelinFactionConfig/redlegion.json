@@ -64,7 +64,7 @@
     "technocratic":1,
     "militarist":1,
     "diplomatic":0.5,
-    "ideological":-0.5,
+    "ideological":-0.75,
   },
 
   "diplomacyTraits":["envious", "stalwart", "helps_allies", "irredentist"], #I envy power, am stalwart in the face of long wars, remember my friends, and always get revenge

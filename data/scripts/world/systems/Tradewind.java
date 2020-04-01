@@ -38,19 +38,21 @@ public class Tradewind {
         system.setLightColor(new Color(255, 255, 153)); // light color in entire system, affects all entities
 
         //setup all distances here
-        final float redmondDist = 270f;
-        final float jabezDist = 450f;
-        final float stable1Dist = 585f;
-        final float asteroidBelt1Dist = 740f;
-        final float jumpInnerDist = 755f;
-        final float vlastaDist = 760f;
-        final float tandaDist = 900f;
-        final float stable2Dist = 1200f;
-        final float stable3Dist = 1200f;
-        final float ervarDist = 1350f;
-        final float jumpOuterDist = 1355f;
-        final float koenDist = 1650f;
+        final float redmondDist = 1270f;
+        final float jabezDist = 1650f;
+        final float stable1Dist = 1785f;
+        final float asteroidBelt1Dist = 2140f;
+        final float jumpInnerDist = 2155f;
+        final float vlastaDist = 2760f;
+        final float tandaDist = 2900f;
+        final float stable2Dist = 3200f;
+        final float stable3Dist = 3200f;
+        final float ervarDist = 3650f;
+        final float jumpOuterDist = 4355f;
+        final float koenDist = 4650f;
 
+        final float redTariff = .28f;
+        final float otherTariff = .30f;
 
         //Irradiated world              Redmond
         PlanetAPI redmond = system.addPlanet("tradewind_redmond",
@@ -116,7 +118,7 @@ public class Tradewind {
                                 Industries.PATROLHQ
                         )
                 ),
-                0.30f,
+                otherTariff,
                 false,
                 false);
 
@@ -127,7 +129,7 @@ public class Tradewind {
         //Ruins Rich Bombarded World    Vlasta
         //Put this in a belt -- it was annihilated and the debris is still around
         system.addAsteroidBelt(tradewindStar, 700, asteroidBelt1Dist, 800, 250, 400, Terrain.ASTEROID_BELT, "Shattered Heart");
-        system.addRingBand(tradewindStar, "misc", "rings_asteroids08", 256f, 0, Color.gray, 256f, asteroidBelt1Dist, 400f);
+        system.addRingBand(tradewindStar, "misc", "rings_asteroids0", 256f, 0, Color.gray, 256f, asteroidBelt1Dist, 400f);
 
         PlanetAPI vlasta = system.addPlanet("vlasta",
                 tradewindStar,
@@ -147,7 +149,6 @@ public class Tradewind {
         vlasta.getMarket().addCondition(Conditions.ORE_RICH);
         vlasta.getMarket().addCondition(Conditions.RARE_ORE_RICH);
         vlasta.getMarket().addCondition(Conditions.TECTONIC_ACTIVITY);
-        vlasta.getMarket().addCondition(Conditions.ORBITAL_BURNS); //todo might not be what I think it is
 
         //Inner Jump Point
         JumpPointAPI jumpPoint1 = Global.getFactory().createJumpPoint(
@@ -202,7 +203,7 @@ public class Tradewind {
                                 Industries.WAYSTATION
                         )
                 ),
-                0.18f,
+                redTariff,
                 true,
                 true);
 
@@ -215,7 +216,7 @@ public class Tradewind {
         tanda_market.getIndustry(Industries.WAYSTATION).setAICoreId(Commodities.GAMMA_CORE);
         tanda_market.getIndustry(Industries.FUELPROD).setAICoreId(Commodities.ALPHA_CORE);
 
-        system.addRingBand(tanda, "misc", "rings_dust0", 256f, 3, Color.white, 256f, 800, 360f, null, null);
+        system.addRingBand(tanda, "misc", "rings_dust0", 256f, 2, Color.yellow, 256f, 800, 360f, null, null);
 
         //Tri-Tachyon Outpost, desert   Siraj
         PlanetAPI siraj = system.addPlanet("siraj",
@@ -263,7 +264,7 @@ public class Tradewind {
                                 Industries.GROUNDDEFENSES
                         )
                 ),
-                0.18f,
+                otherTariff,
                 true,
                 false);
 
@@ -307,7 +308,7 @@ public class Tradewind {
                                 Industries.WAYSTATION
                         )
                 ),
-                0.18f,
+                otherTariff,
                 false,
                 false);
 

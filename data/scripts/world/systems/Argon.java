@@ -63,6 +63,8 @@ public class Argon {
 
         final float majorisRad = 670f;
 
+        final float systemTariff = .28f;
+
 		SectorEntityToken argonAF1 = system.addTerrain(Terrain.ASTEROID_FIELD,
 				new AsteroidFieldParams(
 					200f, // min radius
@@ -135,7 +137,7 @@ public class Argon {
                                 Industries.WAYSTATION
                         )
                 ),
-                0.18f,
+                systemTariff,
                 true,
                 true);
 
@@ -188,7 +190,7 @@ public class Argon {
                                 Industries.REFINING
                         )
                 ),
-                0.18f,
+                systemTariff,
                 false,
                 false);
 
@@ -277,7 +279,7 @@ public class Argon {
                                 Industries.LIGHTINDUSTRY
                         )
                 ),
-                0.18f,
+                systemTariff,
                 true,
                 true);
 
@@ -337,7 +339,7 @@ public class Argon {
                                 Industries.REFINING
                         )
                 ),
-                0.18f,
+                systemTariff,
                 true,
                 true);
 
@@ -481,7 +483,7 @@ public class Argon {
                                 Industries.WAYSTATION
                         )
                 ),
-                0.18f,
+                systemTariff,
                 false,
                 false);
 
