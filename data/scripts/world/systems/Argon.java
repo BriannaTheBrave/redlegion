@@ -150,7 +150,7 @@ public class Argon {
 //        theAdmin.setAICoreId(Commodities.ALPHA_CORE);
 //        argonPrime_market.setAdmin(theAdmin);
 
-        //add first stable loc
+                //add first stable loc
         SectorEntityToken stableLoc1 = system.addCustomEntity("argon_stableloc_1", "Stable Location", "stable_location", Factions.NEUTRAL);
         stableLoc1.setCircularOrbit(argonStar, MathUtils.getRandomNumberInRange(0f,360f),stable1Dist, 520);
 
