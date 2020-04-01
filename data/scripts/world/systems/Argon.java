@@ -21,6 +21,7 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin.MagneticFieldParams;
 import org.lazywizard.lazylib.MathUtils;
+import data.scripts.Utils;
 
 public class Argon {
 	public void generate(SectorAPI sector) {
@@ -98,7 +99,7 @@ public class Argon {
 
         argonPrime.setCustomDescriptionId("redlegion_argon_argonprime"); //reference descriptions.csv
 
-        MarketAPI argonPrime_market = addMarketplace("redlegion", argonPrime, null,
+        MarketAPI argonPrime_market = Utils.addMarketplace("redlegion", argonPrime, null,
                 "Argon Prime",
                 6,
                 new ArrayList<>(
@@ -158,7 +159,7 @@ public class Argon {
         SectorEntityToken whiteCitadel = system.addCustomEntity("argon_white_citadel", "White Citadel", "station_hightech3", "redlegion");
         whiteCitadel.setCircularOrbitPointingDown(argonPrime,360*(float)Math.random(), 660,18f);
         whiteCitadel.setCustomDescriptionId("redlegion_argon_whitecitadel");
-        MarketAPI whiteCitadel_market = addMarketplace("redlegion", whiteCitadel, null,
+        MarketAPI whiteCitadel_market = Utils.addMarketplace("redlegion", whiteCitadel, null,
                 "White Citadel",
                 5,
                 new ArrayList<>(
@@ -241,7 +242,7 @@ public class Argon {
 
         argonBeta.setCustomDescriptionId("redlegion_argon_argonbeta"); //reference descriptions.csv
 
-        MarketAPI argonBeta_market = addMarketplace("redlegion", argonBeta, null,
+        MarketAPI argonBeta_market = Utils.addMarketplace("redlegion", argonBeta, null,
                 "Argon Beta",
                 4,
                 new ArrayList<>(
@@ -301,7 +302,7 @@ public class Argon {
 
         strolluck.setCustomDescriptionId("redlegion_argon_strolluck"); //reference descriptions.csv
 
-        MarketAPI strolluck_market = addMarketplace("redlegion", strolluck, null,
+        MarketAPI strolluck_market = Utils.addMarketplace("redlegion", strolluck, null,
                 "Strolluck",
                 4,
                 new ArrayList<>(
@@ -451,7 +452,7 @@ public class Argon {
         SectorEntityToken bloodKeep = system.addCustomEntity("argon_blood_keep", "Blood Keep", "station_hightech2", "redlegion");
         bloodKeep.setCircularOrbitPointingDown(argonStar,0,bloodDist,4000f);
         bloodKeep.setCustomDescriptionId("redlegion_argon_bloodkeep");
-        MarketAPI bloodKeep_market = addMarketplace("redlegion", bloodKeep, null,
+        MarketAPI bloodKeep_market = Utils.addMarketplace("redlegion", bloodKeep, null,
                 "Blood Keep",
                 4,
                 new ArrayList<>(
@@ -528,62 +529,4 @@ public class Argon {
         editor.clearArc(system.getLocation().x, system.getLocation().y, 0, radius + minRadius, 0, 360f);
         editor.clearArc(system.getLocation().x, system.getLocation().y, 0, radius + minRadius, 0, 360f, 0.25f);
     }
-
-    //Shorthand function for adding a market -- this is derived from tahlan mod
-    public static MarketAPI addMarketplace(String factionID, SectorEntityToken primaryEntity, ArrayList<SectorEntityToken> connectedEntities, String name,
-                                           int popSize, ArrayList<String> marketConditions, ArrayList<String> submarkets, ArrayList<String> industries, float tariff,
-                                           boolean isFreePort, boolean floatyJunk) {
-        EconomyAPI globalEconomy = Global.getSector().getEconomy();
-        String planetID = primaryEntity.getId();
-        String marketID = planetID + "_market"; //IMPORTANT this is a naming convention for markets. didn't want to have to pass in another variable :D
-
-        MarketAPI newMarket = Global.getFactory().createMarket(marketID, name, popSize);
-        newMarket.setFactionId(factionID);
-        newMarket.setPrimaryEntity(primaryEntity);
-        //newMarket.getTariff().modifyFlat("generator", tariff);
-        newMarket.getTariff().setBaseValue(tariff);
-
-        //Add submarkets, if any
-        if (null != submarkets) {
-            for (String market : submarkets) {
-                newMarket.addSubmarket(market);
-            }
-        }
-
-        //Add conditions
-        for (String condition : marketConditions) {
-            newMarket.addCondition(condition);
-        }
-
-        //Add industries
-        for (String industry : industries) {
-            newMarket.addIndustry(industry);
-        }
-
-        //Set free port
-        newMarket.setFreePort(isFreePort);
-
-        //Add connected entities, if any
-        if (null != connectedEntities) {
-            for (SectorEntityToken entity : connectedEntities) {
-                newMarket.getConnectedEntities().add(entity);
-            }
-        }
-
-        //set market in global, factions, and assign market, also submarkets
-        globalEconomy.addMarket(newMarket, floatyJunk);
-        primaryEntity.setMarket(newMarket);
-        primaryEntity.setFaction(factionID);
-
-        if (null != connectedEntities) {
-            for (SectorEntityToken entity : connectedEntities) {
-                entity.setMarket(newMarket);
-                entity.setFaction(factionID);
-            }
-        }
-
-        //Finally, return the newly-generated market
-        return newMarket;
-    }
-	
 }
