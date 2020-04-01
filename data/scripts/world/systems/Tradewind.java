@@ -10,6 +10,7 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.EconomyAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
 import com.fs.starfarer.api.impl.campaign.procgen.PlanetConditionGenerator;
@@ -35,21 +36,21 @@ public class Tradewind {
                 "star_yellow",  // id in planets.json
                 775f, 		  // radius (in pixels at default zoom)
                 500); // corona radius, from star edge
-        system.setLightColor(new Color(255, 255, 153)); // light color in entire system, affects all entities
+        system.setLightColor(new Color(255, 255, 223)); // light color in entire system, affects all entities
 
         //setup all distances here
         final float redmondDist = 1270f;
-        final float jabezDist = 2250f;
-        final float stable1Dist = 2385f;
-        final float asteroidBelt1Dist = 2540f;
-        final float jumpInnerDist = 2755f;
-        final float vlastaDist = 2760f;
-        final float tandaDist = 4000f;
-        final float stable2Dist = 4400f;
-        final float stable3Dist = 4400f;
-        final float ervarDist = 5050f;
-        final float jumpOuterDist = 5355f;
-        final float koenDist = 6650f;
+        final float jabezDist = 2850f;
+        final float stable1Dist = 2885f;
+        final float asteroidBelt1Dist = 4440f;
+        final float jumpInnerDist = 4755f;
+        final float vlastaDist = 4960f;
+        final float tandaDist = 7000f;
+        final float stable2Dist = 7455f;
+        final float stable3Dist = 7455f;
+        final float ervarDist =11650f;
+        final float jumpOuterDist = 12155f;
+        final float koenDist = 12650f;
 
         final float redTariff = .28f;
         final float otherTariff = .30f; //todo move to static class full of these
@@ -129,7 +130,7 @@ public class Tradewind {
         //Ruins Rich Bombarded World    Vlasta
         //Put this in a belt -- it was annihilated and the debris is still around
         system.addAsteroidBelt(tradewindStar, 700, asteroidBelt1Dist, 800, 250, 400, Terrain.ASTEROID_BELT, "Shattered Heart");
-        system.addRingBand(tradewindStar, "misc", "rings_asteroids0", 256f, 0, Color.gray, 256f, asteroidBelt1Dist, 400f);
+        //system.addRingBand(tradewindStar, "misc", "rings_asteroids0", 256f, 0, Color.gray, 256f, asteroidBelt1Dist, 400f);
 
         PlanetAPI vlasta = system.addPlanet("vlasta",
                 tradewindStar,
@@ -165,7 +166,7 @@ public class Tradewind {
                 "Tanda",
                 "gas_giant",
                 360f*(float)Math.random(),
-                500,
+                400,
                 tandaDist,
                 521f);
 
@@ -216,7 +217,7 @@ public class Tradewind {
         tanda_market.getIndustry(Industries.WAYSTATION).setAICoreId(Commodities.GAMMA_CORE);
         tanda_market.getIndustry(Industries.FUELPROD).setAICoreId(Commodities.ALPHA_CORE);
 
-        system.addRingBand(tanda, "misc", "rings_dust0", 256f, 2, Color.yellow, 256f, 800, 360f, null, null);
+        system.addRingBand(tanda, "misc", "rings_dust0", 256f, 2, Color.yellow, 256f, 700, 360f, null, null);
 
         //Tri-Tachyon Outpost, desert   Siraj
         PlanetAPI siraj = system.addPlanet("siraj",
@@ -224,8 +225,8 @@ public class Tradewind {
                 "Siraj",
                 "desert1",
                 360f*(float)Math.random(),
-                150f,
-                785,
+                90f,
+                1285,
                 180f);
 
         siraj.setCustomDescriptionId("redlegion_tradewind_siraj"); //reference descriptions.csv
@@ -334,15 +335,27 @@ public class Tradewind {
         koen.setCustomDescriptionId("redlegion_tradewind_koen"); //reference descriptions.csv
         koen.getMarket().addCondition(Conditions.RUINS_EXTENSIVE);
         koen.getMarket().addCondition(Conditions.VERY_COLD);
-        koen.getMarket().addCondition(Conditions.ABANDONED_STATION); //todo what dis?
         koen.getMarket().addCondition(Conditions.THIN_ATMOSPHERE);
         koen.getMarket().addCondition(Conditions.DARK);
         koen.getMarket().addCondition(Conditions.ORE_RICH);
         koen.getMarket().addCondition(Conditions.RARE_ORE_RICH);
 
+        // Asharu abandoned station
+        SectorEntityToken neutralStation = system.addCustomEntity("tradewind_abandoned_station",
+                "Abandoned Terraforming Platform", "station_side06", "neutral");
+
+        neutralStation.setCircularOrbitPointingDown(system.getEntityById("koen"), 45, 275, 30);
+        neutralStation.setCustomDescriptionId("tradewind_platform");
+        neutralStation.setInteractionImage("illustrations", "abandoned_station2");
+        Misc.setAbandonedStationMarket("tradewind_abandoned_station_market", neutralStation);
+        //also hide in some asteroids
+        neutralStation.getMarket().getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo().addMothballedShip(FleetMemberType.SHIP, "kite_Starting", null); //todo use a RedLegion ship later
+        neutralStation.getMarket().getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo().addCommodity(Commodities.SUPPLIES, 25);
+        neutralStation.getMarket().getSubmarket(Submarkets.SUBMARKET_STORAGE).getCargo().addCommodity(Commodities.FUEL, 16);
+
         //todo add 2 derelicts, a probe, and 3 blocks of salvage, plus a large asteroid field and a nebula, 2 small asteroid fields,
 
-        system.autogenerateHyperspaceJumpPoints(true, true);
+        system.autogenerateHyperspaceJumpPoints(true, false);
 
         HyperspaceTerrainPlugin plugin = (HyperspaceTerrainPlugin) Misc.getHyperspaceTerrain().getPlugin();
         NebulaEditor editor = new NebulaEditor(plugin);
