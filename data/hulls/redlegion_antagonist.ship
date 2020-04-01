@@ -7,9 +7,9 @@
   "height": 66,
   "width": 82,
   "center": [41, 32],
-  "collisionRadius": 0,
+  "collisionRadius": 40.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 0,
+  "shieldRadius": 49.5,
   "viewOffset": 0,
   "weaponSlots": [
     {
@@ -19,7 +19,7 @@
       "mount": "HARDPOINT",
       "arc": 60,
       "angle": 0,
-      "locations": [-2, 26]
+      "locations": [-2.5, 30.5]
     },
     {
       "id": "WS0002",
@@ -28,7 +28,7 @@
       "mount": "HARDPOINT",
       "arc": 60,
       "angle": -0,
-      "locations": [-2, -26]
+      "locations": [-2.5, -30.5]
     },
     {
       "id": "WS0003",
@@ -51,7 +51,7 @@
   ],
   "engineSlots": [
     {
-      "location": [-21.5, 18.5],
+      "location": [-23, 18.5],
       "length": 26.5,
       "width": 14,
       "angle": 180,
@@ -59,7 +59,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-21.5, -18.5],
+      "location": [-23, -18.5],
       "length": 26.5,
       "width": 14,
       "angle": -180,
@@ -67,28 +67,28 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-27, 12.5],
-      "length": 26,
-      "width": 16,
+      "location": [-27, 11.5],
+      "length": 29,
+      "width": 18,
       "angle": 180,
-      "contrailSize": 16,
+      "contrailSize": 18,
       "style": "HIGH_TECH"
     },
     {
-      "location": [-27, -12.5],
-      "length": 26,
-      "width": 16,
+      "location": [-27, -11.5],
+      "length": 29,
+      "width": 18,
       "angle": -180,
-      "contrailSize": 16,
+      "contrailSize": 18,
       "style": "HIGH_TECH"
     }
   ],
   "bounds": [
     32, 0,
-    -0.5, -32,
+    -1, -42,
     -29.5, -22,
     -29.5, 22,
-    -0.5, 32,
+    -1, 42,
     32, -0
   ]
 }

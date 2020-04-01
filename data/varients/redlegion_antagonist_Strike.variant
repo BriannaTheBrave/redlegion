@@ -1,0 +1,27 @@
+{
+  "variantId": "redlegion_antagonist_Strike",
+  "hullId": "redlegion_antagonist",
+  "displayName": "Strike",
+  "goalVariant": true,
+  "fluxCapacitors": 5,
+  "fluxVents": 0,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "civgrade",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "hammer",
+        "WS0002": "hammer",
+        "WS0003": "amblaster"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

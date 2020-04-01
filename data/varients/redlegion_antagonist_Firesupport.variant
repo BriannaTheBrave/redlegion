@@ -1,0 +1,27 @@
+{
+  "variantId": "redlegion_antagonist_Firesupport",
+  "hullId": "redlegion_antagonist",
+  "displayName": "Fire Support",
+  "goalVariant": true,
+  "fluxCapacitors": 5,
+  "fluxVents": 2,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "civgrade",
+    "unstable_injector"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "harpoon",
+        "WS0002": "harpoon",
+        "WS0003": "ioncannon"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}
