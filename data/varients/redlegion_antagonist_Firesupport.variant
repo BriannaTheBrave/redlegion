@@ -8,17 +8,22 @@
   "quality": 0,
   "permaMods": [],
   "hullMods": [
-    "civgrade",
     "unstable_injector"
   ],
   "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0003": "ioncannon"
+      }
+    },
     {
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
         "WS0001": "harpoon",
         "WS0002": "harpoon",
-        "WS0003": "ioncannon"
       }
     }
   ],

@@ -1,0 +1,22 @@
+{
+  "combatFreighterSmall": {
+    "redlegion_antagonist_Cargo":5,
+  },
+  "civilianRandom": {
+    "redlegion_antagonist_Cargo":3,
+    "redlegion_antagonist_Firesupport":0.75,
+    "redlegion_antagonist_Duelist":0.5,
+    "redlegion_antagonist_Strike":0.75
+  },
+  "combatSmall": {
+    "redlegion_antagonist_Firesupport":3,
+    "redlegion_antagonist_Duelist":1,
+    "redlegion_antagonist_Strike":2
+  },
+  "freighterSmall": {
+    "redlegion_antagonist_Cargo":4
+  },
+  "personnelSmall": {
+    "redlegion_antagonist_Cargo":3,
+  },
+}
