@@ -3,8 +3,8 @@
   "hullId": "redlegion_antagonist",
   "displayName": "Fire Support",
   "goalVariant": true,
-  "fluxCapacitors": 5,
-  "fluxVents": 2,
+  "fluxCapacitors": 7,
+  "fluxVents": 0,
   "quality": 0,
   "permaMods": [],
   "hullMods": [
