@@ -1,0 +1,122 @@
+{
+  "hullName": "Blood Seeker",
+  "hullId": "redlegion_bloodseeker",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/redlegion_bloodseeker.png",
+  "style": "HIGH_TECH",
+  "height": 74,
+  "width": 90,
+  "center": [45, 31],
+  "collisionRadius": 47,
+  "shieldCenter": [4.5, -0],
+  "shieldRadius": 57.5,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 45,
+      "angle": 0,
+      "locations": [41, 11]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 45,
+      "angle": -0,
+      "locations": [41, -11]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -42,
+      "locations": [21, -22.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 42,
+      "locations": [21, 22.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -0,
+      "locations": [8.5, -8]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [8.5, 8]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-24.5, 11],
+      "length": 37.5,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-24.5, -11],
+      "length": 38,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-29, 1],
+      "length": 39,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    16, -13,
+    21.5, -13,
+    26.5, -5.5,
+    36.5, -5.5,
+    31.5, -23.5,
+    16.5, -36.5,
+    -10.5, -44.5,
+    -15, -39.5,
+    11, -25.5,
+    10.5, -19.5,
+    -19.5, -18,
+    -29.5, 0,
+    -29.5, -0,
+    -19.5, 18,
+    10.5, 19.5,
+    11, 25.5,
+    -15, 39.5,
+    -10.5, 44.5,
+    16.5, 36.5,
+    31.5, 23.5,
+    36.5, 5.5,
+    26.5, 5.5,
+    21.5, 13,
+    16, 13
+  ]
+}
