@@ -1,0 +1,26 @@
+{
+  "variantId": "redlegion_antagonist_Cargo",
+  "hullId": "redlegion_antagonist",
+  "displayName": "Cargo",
+  "goalVariant": true,
+  "fluxCapacitors": 4,
+  "fluxVents": 0,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "expanded_cargo_holds",
+    "auxiliary_fuel_tanks",
+    "unstable_injector"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "pdburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

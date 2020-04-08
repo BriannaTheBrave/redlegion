@@ -74,7 +74,7 @@
     ],
   },
   "knownWeapons":{
-    "tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp"],
+    "tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp", "redlegion_bp"],
   },
   "priorityWeapons":{
     "tags":[],
@@ -82,7 +82,7 @@
     ],
   },
   "knownShips":{
-    "tags":["base_bp", "pirate_bp", "pirates", "midline_bp", "hightech_bp"],
+    "tags":["base_bp", "pirate_bp", "pirates", "midline_bp", "hightech_bp", "redlegion_bp"],
     "hulls":[
       "falcon_p",
       "atlas2",
@@ -101,7 +101,7 @@
   "variantOverrides":{
   },
   "knownFighters":{
-    "tags":["pirates", "base_bp", "lowtech_bp", "midline_bp", "hightech_bp"],
+    "tags":["pirates", "base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "redlegion_bp"],
     "fighters":[
       "broadsword_wing",
       "talon_wing",
@@ -120,7 +120,7 @@
     ],
   },
   "knownHullMods":{
-    "tags":["base_bp", "pirates"],
+    "tags":["base_bp", "pirates", "redlegion_bp"],
     "hullMods":[
       "advancedshieldemitter", # accelerated
       "turretgyros",
