@@ -18,7 +18,8 @@
     "redlegion_antagonist_Strike":2,
     "redlegion_bloodseeker_Assault": 6,
     "redlegion_bloodseeker_Strike": 4,
-    "redlegion_bloodseeker_Pursuit": 4
+    "redlegion_bloodseeker_Pursuit": 4,
+    "redlegion_bloodseeker_Support": 2
   },
   "freighterSmall": {
     "redlegion_antagonist_Cargo":4
