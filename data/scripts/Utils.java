@@ -5,10 +5,16 @@ import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.campaign.econ.EconomyAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
+import com.fs.starfarer.api.impl.campaign.ids.Entities;
+import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
+import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin.*;
 import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.ui.impl.P;
+import org.lazywizard.lazylib.MathUtils;
 
 import java.util.ArrayList;
 
@@ -101,5 +107,21 @@ public class Utils {
         debris.setDiscoverable(isDiscoverable);
         debris.setSensorProfile(amount);
         return debris; //dont forget to set what to orbit when you get it back!
+    }
+
+    //for adding derelict ships -- todo make a version with random variant by faction picking!
+    public static void addDerelictShip (StarSystemAPI system, SectorEntityToken focus, String variantId, ShipRecoverySpecial.ShipCondition condition, float orbitRadius, boolean recoverable) {
+        DerelictShipEntityPlugin.DerelictShipData params = new DerelictShipEntityPlugin.DerelictShipData(new ShipRecoverySpecial.PerShipData(variantId, condition), true);
+        SectorEntityToken ship = BaseThemeGenerator.addSalvageEntity(system, Entities.WRECK, Factions.NEUTRAL, params);
+        ship.setDiscoverable(true); //all wrecks should be discoverable, helps draw attention
+
+        float orbitDays = orbitRadius / (10f + (float) Math.random() * 5f); //randomly sets orbit duration so longer radius makes it take a bit longer too with some randomness to avoid consistency
+        ship.setCircularOrbit(focus, MathUtils.getRandomNumberInRange(0f,360f), orbitRadius, orbitDays);
+
+        //forces recoverable logic. If you want random, use this to make a boolean when calling function for a 50-50 chance: (Math.random()<0.5)
+        if (recoverable) {
+            SalvageSpecialAssigner.ShipRecoverySpecialCreator recoveryCreator = new SalvageSpecialAssigner.ShipRecoverySpecialCreator(null, 0, 0, false, null, null);
+            Misc.setSalvageSpecial(ship, recoveryCreator.createSpecial(ship, null));
+        }
     }
 }

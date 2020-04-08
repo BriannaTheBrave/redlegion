@@ -13,8 +13,10 @@ import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.*;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.DerelictThemeGenerator;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.BaseSalvageSpecial;
+import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.impl.campaign.terrain.AsteroidFieldTerrainPlugin.AsteroidFieldParams;
 import com.fs.starfarer.api.impl.campaign.terrain.BaseRingTerrain;
 import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin;
@@ -54,7 +56,7 @@ public class Tradewind {
         final float ervarDist =11650f;
         final float jumpOuterDist = 12155f;
         final float koenDist = 12650f;
-        final float probeDist = 14000f;
+        final float probeDist = 13000f;
 
         final float redTariff = .28f;
         final float otherTariff = .30f; //todo move to static class full of these
@@ -149,7 +151,7 @@ public class Tradewind {
         //Ruins Rich Bombarded World    Vlasta
         //Put this in a belt -- it was annihilated and the debris is still around
         system.addAsteroidBelt(tradewindStar, 700, asteroidBelt1Dist, 800, 250, 400, Terrain.ASTEROID_BELT, "Shattered Heart");
-        //system.addRingBand(tradewindStar, "misc", "rings_asteroids0", 256f, 0, Color.gray, 256f, asteroidBelt1Dist, 400f);
+        system.addRingBand(tradewindStar, "misc", "rings_asteroids0", 256f, 2, Color.gray, 256f, asteroidBelt1Dist, 400f);
 
         //adding a derelict station in the belt for player to exploit
         SectorEntityToken stationDerelict1 = DerelictThemeGenerator.addSalvageEntity(system, Entities.STATION_RESEARCH, Factions.DERELICT);
@@ -356,10 +358,8 @@ public class Tradewind {
                 false,
                 false);
 
-        SectorEntityToken derelict2 = DerelictThemeGenerator.addSalvageEntity(system, Entities.WRECK, Factions.DERELICT);
-        derelict2.setId("redlegion_tradewind_derelict2");
-        derelict2.setCircularOrbit(ervar, MathUtils.getRandomNumberInRange(0f,360f), 500 + ervar.getRadius(), 75);
-        //derelict2.addDropRandom(); //hmm
+
+        Utils.addDerelictShip(system, ervar, "kite_Starting", ShipRecoverySpecial.ShipCondition.BATTERED, 300, true); //todo replace with a red-legion ship
 
         // outer jump
         JumpPointAPI jumpPoint2 = Global.getFactory().createJumpPoint(
@@ -396,7 +396,7 @@ public class Tradewind {
         SectorEntityToken neutralStation = system.addCustomEntity("tradewind_abandoned_station",
                 "Abandoned Terraforming Platform", "station_side06", "neutral");
 
-        neutralStation.setCircularOrbitPointingDown(system.getEntityById("koen"), 45, 275, 30);
+        neutralStation.setCircularOrbitPointingDown(system.getEntityById("koen"), 45, 475, 30);
         neutralStation.setCustomDescriptionId("tradewind_platform");
         neutralStation.setInteractionImage("illustrations", "abandoned_station2");
         Misc.setAbandonedStationMarket("tradewind_abandoned_station_market", neutralStation);
@@ -406,23 +406,23 @@ public class Tradewind {
 
         SectorEntityToken koenAF1 = system.addTerrain(Terrain.ASTEROID_FIELD,
                 new AsteroidFieldParams(
-                        55f, // min radius
-                        175f, // max radius
-                        32, // min asteroid count
-                        48, // max asteroid count
+                        125f, // min radius
+                        360f, // max radius
+                        16, // min asteroid count
+                        24, // max asteroid count
                         8f, // min asteroid radius
-                        20f, // max asteroid radius
+                        12f, // max asteroid radius
                         "Asteroid Field")); // null for default name
-        koenAF1.setCircularOrbit(koen, 45, 275, 30);
+        koenAF1.setCircularOrbit(koen, 45, 475, 30);
 
         //here is the probe that has drifted away
         SectorEntityToken probe = DerelictThemeGenerator.addSalvageEntity(system, Entities.DERELICT_SURVEY_PROBE, Factions.DERELICT);
         probe.setId("redlegion_tradewind_probe");
         probe.setCircularOrbit(tradewindStar, MathUtils.getRandomNumberInRange(0f,360f), probeDist, 2000f);
-        SalvageEntityGenDataSpec.DropData probeData = new SalvageEntityGenDataSpec.DropData();
-        probeData.addRandomWeapons(1, 5);
-        probeData.addCommodity(Commodities.VOLATILES, 40);
-        probe.addDropRandom(probeData);
+//        SalvageEntityGenDataSpec.DropData probeData = new SalvageEntityGenDataSpec.DropData();
+//        //probeData.addRandomWeapons(1, 5); //this crashed
+//        //probeData.addCommodity(Commodities.VOLATILES, 40);
+//        probe.addDropRandom(probeData);
 
         system.autogenerateHyperspaceJumpPoints(true, false);
 
