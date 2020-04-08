@@ -11,6 +11,9 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 49.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "civgrade"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -19,7 +22,7 @@
       "mount": "HARDPOINT",
       "arc": 60,
       "angle": 0,
-      "locations": [-2.5, 30.5]
+      "locations": [0.5, 30.5]
     },
     {
       "id": "WS0002",
@@ -28,7 +31,7 @@
       "mount": "HARDPOINT",
       "arc": 60,
       "angle": -0,
-      "locations": [-2.5, -30.5]
+      "locations": [0.5, -30.5]
     },
     {
       "id": "WS0003",
@@ -85,11 +88,10 @@
   ],
   "bounds": [
     32, 0,
-    -1, -42,
+    1.5, -38,
     -29.5, -22,
     -29.5, 22,
-    -1, 42,
+    1.5, 38,
     32, -0
-  ],
-  "builtInMods": ["civgrade"],
+  ]
 }
