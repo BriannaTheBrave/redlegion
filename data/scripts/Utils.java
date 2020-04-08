@@ -2,8 +2,13 @@ package data.scripts;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
+import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.campaign.econ.EconomyAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
+import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin.*;
+import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.ui.impl.P;
 
 import java.util.ArrayList;
 
@@ -63,5 +68,38 @@ public class Utils {
 
         //Finally, return the newly-generated market
         return newMarket;
+    }
+
+    //for adding debris with some randomness
+    public static SectorEntityToken addDebris(StarSystemAPI system, float durationDays, int baseSalvageXP, boolean isDiscoverable, DebrisFieldSource source) {
+        if (durationDays < 0f) {
+            durationDays = 30f;
+        }
+
+        if (baseSalvageXP < 0) {
+            baseSalvageXP = 500;
+        }
+
+        if (system == null) {
+            //todo log error and such
+        }
+
+        if (source == null) {
+            source = DebrisFieldSource.MIXED;
+        }
+
+        float amount = StarSystemGenerator.random.nextFloat() * 200f + 100f;
+        float density = StarSystemGenerator.random.nextFloat() * 0.5f + 0.5f;
+        DebrisFieldParams params = new DebrisFieldParams(
+                amount / density, // field radius - should not go above 1000 for performance reasons
+                density / 3f, // density, visual - affects number of debris pieces
+                durationDays, // duration in days to persist
+                0f); // days the field will keep generating glowing pieces. 0 for the entirety of its existence
+        params.source = source;
+        params.baseSalvageXP = baseSalvageXP;
+        SectorEntityToken debris = Misc.addDebrisField(system, params, StarSystemGenerator.random);
+        debris.setDiscoverable(isDiscoverable);
+        debris.setSensorProfile(amount);
+        return debris; //dont forget to set what to orbit when you get it back!
     }
 }
