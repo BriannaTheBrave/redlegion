@@ -41,15 +41,6 @@
       "arc": 260,
       "angle": 0,
       "locations": [-11, -0]
-    },
-    {
-      "id": "WS0004",
-      "size": "MEDIUM",
-      "type": "ENERGY",
-      "mount": "TURRET",
-      "arc": 260,
-      "angle": -0,
-      "locations": [-11, 0]
     }
   ],
   "engineSlots": [
