@@ -17,18 +17,15 @@ public class RedLegionModPlugin extends BaseModPlugin
     @Override
     public void onNewGame() {
         SectorAPI sector = Global.getSector();
-        //initRedLegion();
         Global.getLogger(this.getClass()).info("Hooray RedLegion mod plugin in a jar is loaded!");
 
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
         boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
         if (!haveNexerelin || SectorManager.getManager().isCorvusMode()){
             initRedLegion();
-            //new tahlan_Rubicon().generate(sector); //logic from tahlan
         }
 
         if (!haveNexerelin) {
-            //Legio Infernalis relations
             RedLegionFactionRelations.initFactionRelationships(sector);
         }
     }
